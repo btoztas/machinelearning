@@ -1,13 +1,13 @@
 %% Loading data files
-load('mfiles1/data1.mat');
+load('mfiles1/data2a.mat');
 
 %% Creating X matrix and Fingind beta0 and beta1
-X = [ones(20,1), x];
+X = [ones(51,1), x, x.^2];
 Beta = inv(X'*X)*X'*y;
 
 %% Ploting training data and fit
 xt = -1:0.1:1;
-yt = Beta(1) + Beta(2)*xt;
+yt = Beta(1) + Beta(2)*xt + Beta(3)*xt.^2;
 scatter(y,x);
 hold on;
 plot(yt,xt);
@@ -19,6 +19,6 @@ plot(yt,xt);
 
 SSE = 0;
 for k=1:20
-    p = (y(k) - Beta(1) -Beta(2)*x(k))^2;
+    p = (y(k) - Beta(1) - Beta(2)*x(k) - Beta(3)*x(k)^2)^2;
     SSE = SSE + p;
 end

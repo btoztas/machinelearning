@@ -1,0 +1,10 @@
+%% Loading data files
+load('mfiles1/data3.mat');
+
+[B,FitInfo] = lasso(X,Y);
+lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log');
+hold on
+hline = refline(0, 2.9388)
+hline = refline(0, 0.0648)
+hline = refline(0, 1.4252)
+legend(
