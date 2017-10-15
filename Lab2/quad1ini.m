@@ -6,9 +6,9 @@ threshold = .01;
 
 maxiter = 1000;
 
-anim = 1;
+anim = 0;
 
-a = 1;
+a = 0.5;
 
-eta = .1;
+eta = 3;
 

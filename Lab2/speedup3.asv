@@ -1,0 +1,19 @@
+clear;
+quad2ini;
+anim = 0;
+a = 20;
+fileID = fopen('results3.txt','w');
+vmatrix = zeros(8, 5);
+alfav = [0 0.5 0.7 0.9 0.95];
+etav = [0.003 0.01 0.03 0.1 0.3 1 3 10];
+%for alfa = [0 0.5 0.7 0.9 0.95]
+%    for eta = [0.003 0.01 0.03 0.1 0.3 1 3 10]
+%        quad2;
+%        fprintf(fileID, "Alfa = %f Eta = %f iter = %d f = %f\n", alfa, eta, iter, f);
+%    end
+%end
+fmatrix = [alfav;vmatrix];
+ffmatrix = []
+filename = 'testdata4.xls';
+A = [fmatrix];
+xlswrite(filename, A);
