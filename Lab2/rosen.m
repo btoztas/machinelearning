@@ -10,16 +10,16 @@ z = z';
 
 v=floor(a/80)+3:floor(a):max(max(z));
 
-figure(1), clf
-contour(z,v,'b'), axis square
-set(gca,'XTick',[1 51 101 151 201])
-set(gca,'XTickLabel',[-2 -1 0 1 2])
-set(gca,'YTick',[1 51 101 151 201])
-set(gca,'YTickLabel',[-1 0 1 2 3])
+%figure(1), clf
+%contour(z,v,'b'), axis square
+%set(gca,'XTick',[1 51 101 151 201])
+%set(gca,'XTickLabel',[-2 -1 0 1 2])
+%set(gca,'YTick',[1 51 101 151 201])
+%set(gca,'YTickLabel',[-1 0 1 2 3])
 
-hold on
+%hold on
 
-plot(151,101,'b.')
+%plot(151,101,'b.')
 
 x1 = x1i;
 x2 = x2i;
@@ -39,7 +39,7 @@ minf = f;
 
 iter = 0;
 
-plot(50 * x1 + 101, 50 * x2 + 51,'r.')
+%plot(50 * x1 + 101, 50 * x2 + 51,'r.')
 x1old = x1;
 x2old = x2;
 while f > threshold | fold > threshold
@@ -93,9 +93,10 @@ while f > threshold | fold > threshold
 end
 
 if iter <= maxiter & abs(x1) < 2 & abs(x2) < 2
-   fprintf('Converged in %d steps, f = %g\n', iter, f)
+   fprintf('Converged in %d steps, f = %g\n', iter, f);
 else
-   fprintf('Did not converge in %d steps, f = %g\n', maxiter, f)
+   fprintf('Did not converge in %d steps, f = %g\n', maxiter, f);
+   iter = 1001;
 end
 % 
 % fprintf('Function value: %f\n', (1 - x1)^2 + a * (x2 - x1^2)^2)
