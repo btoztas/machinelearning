@@ -1,0 +1,5 @@
+Alfa = 0.000000 Eta = 0.001000 iter = 1001 f = 0.456989
+Alfa = 0.000000 Eta = 0.010000 iter = 1001 f = NaN
+Alfa = 0.000000 Eta = 0.100000 iter = 1001 f = NaN
+Alfa = 0.000000 Eta = 1.000000 iter = 1001 f = NaN
+Alfa = 0.000000 Eta = 10.000000 iter = 1001 f = NaN
