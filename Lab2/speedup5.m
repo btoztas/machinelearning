@@ -1,8 +1,10 @@
 clear;
 rosenini;
+a = 100;
+assact;
 anim = 0;
 fileID = fopen('results3.txt','w');
-vmatrix = zeros(11, 5);
+vmatrix = zeros(5, 11);
 alfav = 0.9:0.01:1;
 etav = [0 0.01 0.02 0.03 0.04 0.05];
 etav = etav';
