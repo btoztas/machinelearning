@@ -56,6 +56,9 @@
 			% This is Code Section 1
 			% ***************************************************************************************************************
 			
+            
+            cond = 0;
+            
 			for trigramindex = 1:numel(text)-2;					% Loop through all the trigrams of the input text
 				
 				trigram = text(trigramindex:trigramindex+2);	% Contains the trigram that is to be processed in this iteration
@@ -64,9 +67,10 @@
 					trigramcount = counts{languageindex}(trigram);		% Contains the number of times that the current trigram occurred in the training data for the current language
 				else
 					trigramcount = 0;
-				end
+                end
 
-            
+                cond = cond + log((trigramcount+1)/(total_counts(languageindex)+60*60*60));
+                
 				% *****************************************************************
 				% Add here any code that is to be executed once for each trigram.
 				%
@@ -84,6 +88,8 @@
 			% This is Code Section 3
 			% *******************************************************************************************************************
 			
+            scores(languageindex)=cond;
+            
 		end			% The loop on languages ends here
 		
 		% Output the results
